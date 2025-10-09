@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Notas Inteligentes",
+  "version": "0.1.0",
+  "description": "Guardar y reutilizar prompts dentro de ChatGPT",
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_icon": "public/icons/sonriente.png"
+  },
+  "background": {
+    "service_worker": "src/background/background.ts"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["src/content/contentScript.ts"]
+    }
+  ]
+}
