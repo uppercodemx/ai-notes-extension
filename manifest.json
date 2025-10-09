@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Notas Inteligentes (MVP)",
+  "version": "0.1.0",
+  "description": "Guarda, organiza e inserta prompts/notas en ChatGPT. Codename: FORAS",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "FORAS"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*"
+  ],
+  "background": {
+    "service_worker": "sw.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "content/index.js"
+      ],
+      "css": [
+        "content/styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-panel": {
+      "suggested_key": {
+        "default": "Alt+N"
+      },
+      "description": "Abrir/cerrar panel FORAS"
+    },
+    "save-selection": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Guardar selecci\u00f3n como nota"
+    }
+  }
+}

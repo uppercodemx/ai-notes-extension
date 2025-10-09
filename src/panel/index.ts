@@ -1,0 +1,1 @@
+const app=document.getElementById('app')!;app.textContent='FORAS listo. Opciones futuras aquí.';

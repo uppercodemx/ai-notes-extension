@@ -1,0 +1,25 @@
+{
+  "name": "foras",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FORAS \u2014 Notas Inteligentes para ChatGPT (Chrome Extension, MV3).",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "node build.mjs --watch",
+    "build": "node build.mjs --prod",
+    "clean": "rimraf dist",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "rimraf": "^5.0.7",
+    "typescript": "^5.6.3",
+    "prettier": "^3.3.3",
+    "eslint": "^9.9.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.1",
+    "@typescript-eslint/parser": "^8.8.1",
+    "chrome-types": "^0.1.296"
+  }
+}
